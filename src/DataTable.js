@@ -229,24 +229,26 @@ const DataTable = ({ data }) => {
           </div>
         </div>
       )}
-      <table style={tableStyle}>
-        <thead>
-          <tr>
-            {visibleHeaders.map(header => (
-              <th key={header} style={thStyle}>{header}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {filteredRows.map((row, index) => (
-            <tr key={index}>
+      <div style={{ overflowX: 'auto', maxWidth: '100%' }}>
+        <table style={tableStyle}>
+          <thead>
+            <tr>
               {visibleHeaders.map(header => (
-                <td key={header} style={tdStyle}>{String(row[header])}</td>
+                <th key={header} style={thStyle}>{header}</th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredRows.map((row, index) => (
+              <tr key={index}>
+                {visibleHeaders.map(header => (
+                  <td key={header} style={tdStyle}>{String(row[header])}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };

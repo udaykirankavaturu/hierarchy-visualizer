@@ -278,40 +278,52 @@ function App() {
           Reset
         </button>
       )}
-      {hierarchicalData && selectedArray && (
-        <DraggablePanel
-          title={`${selectedNodeName} - ${selectedArrayName}`}
-          defaultX={window.innerWidth - 370}
-          defaultY={70}
-          minWidth={350}
-          zIndex={1000}
-        >
-          <div>
-            <button
-              onClick={clearSelectedArray}
-              style={{
-                position: 'absolute',
-                top: 8,
-                right: 8,
-                background: 'transparent',
-                border: 'none',
-                fontSize: 20,
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                color: '#888',
-                zIndex: 1100,
-                padding: '4px 8px',
-                lineHeight: 1
-              }}
-              aria-label="Close"
-              title="Close"
-            >
-              ×
-            </button>
-            <DataTable data={selectedArray} />
-          </div>
-        </DraggablePanel>
-      )}
+      {hierarchicalData && selectedArray && (() => {
+        // Estimate number of columns for the selected array
+        let numColumns = 1;
+        if (Array.isArray(selectedArray) && selectedArray.length > 0) {
+          numColumns = Object.keys(selectedArray[0]).length;
+        } else if (selectedArray && typeof selectedArray === 'object') {
+          numColumns = Object.keys(selectedArray).length;
+        }
+        const panelWidth = Math.max(350, 120 * numColumns);
+        const maxX = window.innerWidth - panelWidth - 24; // 24px right margin
+        const defaultX = Math.max(24, Math.min(maxX, window.innerWidth - 370));
+        return (
+          <DraggablePanel
+            title={`${selectedNodeName} - ${selectedArrayName}`}
+            defaultX={defaultX}
+            defaultY={70}
+            minWidth={350}
+            zIndex={1000}
+          >
+            <div>
+              <button
+                onClick={clearSelectedArray}
+                style={{
+                  position: 'absolute',
+                  top: 8,
+                  right: 8,
+                  background: 'transparent',
+                  border: 'none',
+                  fontSize: 20,
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  color: '#888',
+                  zIndex: 1100,
+                  padding: '4px 8px',
+                  lineHeight: 1
+                }}
+                aria-label="Close"
+                title="Close"
+              >
+                ×
+              </button>
+              <DataTable data={selectedArray} />
+            </div>
+          </DraggablePanel>
+        );
+      })()}
       {hierarchicalData && (
         <DraggablePanel
           title="Attribute Filter"
