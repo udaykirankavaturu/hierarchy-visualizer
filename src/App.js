@@ -199,7 +199,7 @@ function App() {
       {showInputPanel && (
         <>
           <DraggablePanel
-            title="Upload & Paste JSON"
+            title="Input Panel"
             defaultX={window.innerWidth / 2 - 220}
             defaultY={10}
             minWidth={440}
