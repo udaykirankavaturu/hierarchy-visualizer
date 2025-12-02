@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './DraggablePanel.css';
 
-function DraggablePanel({ title, children, defaultX = 0, defaultY = 0, minWidth = 300, zIndex = 1000 }) {
+function DraggablePanel({ title, children, defaultX = 0, defaultY = 0, minWidth = 300, zIndex = 1000, onHeaderAction = null, headerActionLabel = 'Close' }) {
     const [position, setPosition] = useState({ x: defaultX, y: defaultY });
     const [isDragging, setIsDragging] = useState(false);
     const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
@@ -85,6 +85,26 @@ function DraggablePanel({ title, children, defaultX = 0, defaultY = 0, minWidth 
             {title && (
                 <div ref={headerRef} style={headerStyle} onMouseDown={handleMouseDown}>
                     <span style={{ flex: 1 }}>{title}</span>
+                    {onHeaderAction && (
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onHeaderAction();
+                            }}
+                            style={{
+                                background: '#eee',
+                                border: '1px solid #bbb',
+                                borderRadius: '4px',
+                                cursor: 'pointer',
+                                fontSize: '12px',
+                                fontWeight: 'bold',
+                                padding: '4px 8px',
+                                marginLeft: '8px'
+                            }}
+                        >
+                            {headerActionLabel}
+                        </button>
+                    )}
                 </div>
             )}
             <div style={contentStyle}>

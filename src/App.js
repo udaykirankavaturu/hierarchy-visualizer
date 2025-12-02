@@ -204,6 +204,8 @@ function App() {
             defaultY={10}
             minWidth={440}
             zIndex={2000}
+            onHeaderAction={() => setShowInputPanel(false)}
+            headerActionLabel="Hide"
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div>
