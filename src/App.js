@@ -278,7 +278,7 @@ function App() {
         <DraggablePanel
           title={`${selectedNodeName} - ${selectedArrayName}`}
           defaultX={window.innerWidth - 370}
-          defaultY={10}
+          defaultY={70}
           minWidth={350}
           zIndex={1000}
         >
