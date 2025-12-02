@@ -1,5 +1,5 @@
 {
-  "name": "json-tree-visualizer",
+  "name": "hierarchy-visualizer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

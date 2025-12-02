@@ -20,19 +20,21 @@ function transformData(data) {
   data.forEach(node => {
     if (node.edges) {
       node.edges.forEach(edge => {
-        alltargetids.add(edge.targetid);
-        if (dataMap[edge.targetid]) {
-          dataMap[node.id].children.push(dataMap[edge.targetid]);
+        // Handle both 'targetid' and 'targetId' (case-insensitive)
+        const targetId = edge.targetid || edge.targetId;
+        alltargetids.add(targetId);
+        if (dataMap[targetId]) {
+          dataMap[node.id].children.push(dataMap[targetId]);
         } else {
           // Add a special node for missing edge
           const missingNode = {
-            id: `missing-${edge.targetid}`,
-            name: `Missing: ${edge.targetid}`,
+            id: `missing-${targetId}`,
+            name: `Missing: ${targetId}`,
             isMissing: true,
             children: []
           };
           dataMap[node.id].children.push(missingNode);
-          missingEdges.push({ from: node.id, to: edge.targetid });
+          missingEdges.push({ from: node.id, to: targetId });
         }
       });
     }
