@@ -1,0 +1,77 @@
+[
+    {
+        "id": "20",
+        "name": "Node 20",
+        "group": "group4",
+        "type": "typeD",
+        "edges": [
+            {
+                "targetid": "21"
+            },
+            {
+                "targetid": "22"
+            }
+        ],
+        "properties": [
+            {
+                "name": "propD",
+                "value": "valD"
+            },
+            {
+                "name": "propE",
+                "value": "valE"
+            }
+        ],
+        "config-options": [
+            {
+                "name": "optionD",
+                "value": "valD"
+            },
+            {
+                "name": "optionE",
+                "value": "valE"
+            }
+        ],
+        "things": {
+            "thingC": {
+                "name": "thingC",
+                "value": "valC"
+            },
+            "thingD": {
+                "name": "thingD",
+                "value": "valD"
+            }
+        }
+    },
+    {
+        "id": "21",
+        "name": "Node 21",
+        "edges": [
+            {
+                "targetid": "23"
+            }
+        ],
+        "properties": [
+            {
+                "name": "propF",
+                "value": "valF"
+            }
+        ]
+    },
+    {
+        "id": "22",
+        "name": "Node 22",
+        "edges": [],
+        "config-options": [
+            {
+                "name": "optionF",
+                "value": "valF"
+            }
+        ]
+    },
+    {
+        "id": "23",
+        "name": "Node 23",
+        "edges": []
+    }
+]

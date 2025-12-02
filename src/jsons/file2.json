@@ -1,0 +1,57 @@
+[
+    {
+        "id": "3",
+        "name": "Node 3 from file 2",
+        "edges": [
+            {
+                "targetid": "12"
+            },
+            {
+                "targetid": "13"
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Node 4 from file 2",
+        "edges": [
+            {
+                "targetid": "14"
+            }
+        ],
+        "properties": [
+            {
+                "name": "prop1",
+                "value": "val1"
+            },
+            {
+                "name": "prop2",
+                "value": "val2"
+            }
+        ]
+    },
+    {
+        "id": "12",
+        "name": "Node 12",
+        "edges": []
+    },
+    {
+        "id": "13",
+        "name": "Node 13",
+        "edges": [
+            {
+                "targetid": "15"
+            }
+        ]
+    },
+    {
+        "id": "14",
+        "name": "Node 14",
+        "edges": []
+    },
+    {
+        "id": "15",
+        "name": "Node 15",
+        "edges": []
+    }
+]

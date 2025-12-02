@@ -1,0 +1,511 @@
+[
+    {
+        "id": "1",
+        "name": "Node 1 from file 1",
+        "group": "group1",
+        "type": "typeA",
+        "edges": [
+            {
+                "targetid": "2"
+            },
+            {
+                "targetid": "5"
+            },
+            {
+                "targetid": "6"
+            },
+            {
+                "targetid": "invalid id is here"
+            }
+        ],
+        "properties": [
+            {
+                "name": "prop1",
+                "value": "val1"
+            },
+            {
+                "name": "prop2",
+                "value": "val2"
+            },
+            {
+                "name": "prop3",
+                "value": "val3"
+            },
+            {
+                "name": "prop4",
+                "value": "val4"
+            },
+            {
+                "name": "prop5",
+                "value": "val5"
+            },
+            {
+                "name": "prop6",
+                "value": "val6"
+            },
+            {
+                "name": "prop7",
+                "value": "val7"
+            },
+            {
+                "name": "prop8",
+                "value": "val8"
+            },
+            {
+                "name": "prop9",
+                "value": "val9"
+            },
+            {
+                "name": "prop10",
+                "value": "val10"
+            },
+            {
+                "name": "prop11",
+                "value": "val11"
+            },
+            {
+                "name": "prop12",
+                "value": "val12"
+            },
+            {
+                "name": "prop13",
+                "value": "val13"
+            },
+            {
+                "name": "prop14",
+                "value": "val14"
+            },
+            {
+                "name": "prop15",
+                "value": "val15"
+            },
+            {
+                "name": "prop16",
+                "value": "val16"
+            },
+            {
+                "name": "prop17",
+                "value": "val17"
+            },
+            {
+                "name": "prop18",
+                "value": "val18"
+            },
+            {
+                "name": "prop19",
+                "value": "val19"
+            },
+            {
+                "name": "prop20",
+                "value": "val20"
+            },
+            {
+                "name": "prop21",
+                "value": "val21"
+            },
+            {
+                "name": "prop22",
+                "value": "val22"
+            },
+            {
+                "name": "prop23",
+                "value": "val23"
+            },
+            {
+                "name": "prop24",
+                "value": "val24"
+            },
+            {
+                "name": "prop25",
+                "value": "val25"
+            },
+            {
+                "name": "prop26",
+                "value": "val26"
+            },
+            {
+                "name": "prop27",
+                "value": "val27"
+            },
+            {
+                "name": "prop28",
+                "value": "val28"
+            },
+            {
+                "name": "prop29",
+                "value": "val29"
+            },
+            {
+                "name": "prop30",
+                "value": "val30"
+            },
+            {
+                "name": "prop31",
+                "value": "val31"
+            },
+            {
+                "name": "prop32",
+                "value": "val32"
+            },
+            {
+                "name": "prop33",
+                "value": "val33"
+            },
+            {
+                "name": "prop34",
+                "value": "val34"
+            },
+            {
+                "name": "prop35",
+                "value": "val35"
+            },
+            {
+                "name": "prop36",
+                "value": "val36"
+            },
+            {
+                "name": "prop37",
+                "value": "val37"
+            },
+            {
+                "name": "prop38",
+                "value": "val38"
+            },
+            {
+                "name": "prop39",
+                "value": "val39"
+            },
+            {
+                "name": "prop40",
+                "value": "val40"
+            },
+            {
+                "name": "prop41",
+                "value": "val41"
+            },
+            {
+                "name": "prop42",
+                "value": "val42"
+            },
+            {
+                "name": "prop43",
+                "value": "val43"
+            },
+            {
+                "name": "prop44",
+                "value": "val44"
+            },
+            {
+                "name": "prop45",
+                "value": "val45"
+            },
+            {
+                "name": "prop46",
+                "value": "val46"
+            },
+            {
+                "name": "prop47",
+                "value": "val47"
+            },
+            {
+                "name": "prop48",
+                "value": "val48"
+            },
+            {
+                "name": "prop49",
+                "value": "val49"
+            },
+            {
+                "name": "prop50",
+                "value": "val50"
+            },
+            {
+                "name": "prop51",
+                "value": "val51"
+            },
+            {
+                "name": "prop52",
+                "value": "val52"
+            },
+            {
+                "name": "prop53",
+                "value": "val53"
+            },
+            {
+                "name": "prop54",
+                "value": "val54"
+            },
+            {
+                "name": "prop55",
+                "value": "val55"
+            },
+            {
+                "name": "prop56",
+                "value": "val56"
+            },
+            {
+                "name": "prop57",
+                "value": "val57"
+            },
+            {
+                "name": "prop58",
+                "value": "val58"
+            },
+            {
+                "name": "prop59",
+                "value": "val59"
+            },
+            {
+                "name": "prop60",
+                "value": "val60"
+            },
+            {
+                "name": "prop61",
+                "value": "val61"
+            },
+            {
+                "name": "prop62",
+                "value": "val62"
+            },
+            {
+                "name": "prop63",
+                "value": "val63"
+            },
+            {
+                "name": "prop64",
+                "value": "val64"
+            },
+            {
+                "name": "prop65",
+                "value": "val65"
+            },
+            {
+                "name": "prop66",
+                "value": "val66"
+            },
+            {
+                "name": "prop67",
+                "value": "val67"
+            },
+            {
+                "name": "prop68",
+                "value": "val68"
+            },
+            {
+                "name": "prop69",
+                "value": "val69"
+            },
+            {
+                "name": "prop70",
+                "value": "val70"
+            },
+            {
+                "name": "prop71",
+                "value": "val71"
+            },
+            {
+                "name": "prop72",
+                "value": "val72"
+            },
+            {
+                "name": "prop73",
+                "value": "val73"
+            },
+            {
+                "name": "prop74",
+                "value": "val74"
+            },
+            {
+                "name": "prop75",
+                "value": "val75"
+            },
+            {
+                "name": "prop76",
+                "value": "val76"
+            },
+            {
+                "name": "prop77",
+                "value": "val77"
+            },
+            {
+                "name": "prop78",
+                "value": "val78"
+            },
+            {
+                "name": "prop79",
+                "value": "val79"
+            },
+            {
+                "name": "prop80",
+                "value": "val80"
+            },
+            {
+                "name": "prop81",
+                "value": "val81"
+            },
+            {
+                "name": "prop82",
+                "value": "val82"
+            },
+            {
+                "name": "prop83",
+                "value": "val83"
+            },
+            {
+                "name": "prop84",
+                "value": "val84"
+            },
+            {
+                "name": "prop85",
+                "value": "val85"
+            },
+            {
+                "name": "prop86",
+                "value": "val86"
+            },
+            {
+                "name": "prop87",
+                "value": "val87"
+            },
+            {
+                "name": "prop88",
+                "value": "val88"
+            },
+            {
+                "name": "prop89",
+                "value": "val89"
+            },
+            {
+                "name": "prop90",
+                "value": "val90"
+            },
+            {
+                "name": "prop91",
+                "value": "val91"
+            },
+            {
+                "name": "prop92",
+                "value": "val92"
+            },
+            {
+                "name": "prop93",
+                "value": "val93"
+            },
+            {
+                "name": "prop94",
+                "value": "val94"
+            },
+            {
+                "name": "prop95",
+                "value": "val95"
+            },
+            {
+                "name": "prop96",
+                "value": "val96"
+            },
+            {
+                "name": "prop97",
+                "value": "val97"
+            },
+            {
+                "name": "prop98",
+                "value": "val98"
+            },
+            {
+                "name": "prop99",
+                "value": "val99"
+            },
+            {
+                "name": "prop100",
+                "value": "val100"
+            }
+        ],
+        "config-options": [
+            {
+                "name": "option1",
+                "value": "val1"
+            },
+            {
+                "name": "option2",
+                "value": "val2"
+            }
+        ],
+        "things": {
+            "thing1": {
+                "name": "thing1",
+                "value": "val1"
+            },
+            "thing2": {
+                "name": "thing2",
+                "value": "val2"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "Node 2 from file 1",
+        "edges": [
+            {
+                "targetid": "3"
+            },
+            {
+                "targetid": "4"
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "name": "Node 5",
+        "edges": [
+            {
+                "targetid": "7"
+            },
+            {
+                "targetid": "8"
+            }
+        ],
+        "group": "group2"
+    },
+    {
+        "id": "6",
+        "name": "Node 6",
+        "edges": [
+            {
+                "targetid": "9"
+            }
+        ],
+        "type": "typeB"
+    },
+    {
+        "id": "7",
+        "name": "Node 7",
+        "edges": []
+    },
+    {
+        "id": "8",
+        "name": "Node 8",
+        "edges": [
+            {
+                "targetid": "10"
+            },
+            {
+                "targetid": "11"
+            }
+        ]
+    },
+    {
+        "id": "9",
+        "name": "Node 9",
+        "edges": []
+    },
+    {
+        "id": "10",
+        "name": "Node 10",
+        "edges": []
+    },
+    {
+        "id": "11",
+        "name": "Node 11",
+        "edges": []
+    }
+]

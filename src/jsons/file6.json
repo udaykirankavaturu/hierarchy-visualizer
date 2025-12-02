@@ -1,0 +1,77 @@
+[
+    {
+        "id": "28",
+        "name": "Node 28",
+        "group": "group6",
+        "type": "typeF",
+        "edges": [
+            {
+                "targetid": "29"
+            },
+            {
+                "targetid": "30"
+            }
+        ],
+        "properties": [
+            {
+                "name": "propJ",
+                "value": "valJ"
+            },
+            {
+                "name": "propK",
+                "value": "valK"
+            }
+        ],
+        "config-options": [
+            {
+                "name": "optionJ",
+                "value": "valJ"
+            },
+            {
+                "name": "optionK",
+                "value": "valK"
+            }
+        ],
+        "things": {
+            "thingG": {
+                "name": "thingG",
+                "value": "valG"
+            },
+            "thingH": {
+                "name": "thingH",
+                "value": "valH"
+            }
+        }
+    },
+    {
+        "id": "29",
+        "name": "Node 29",
+        "edges": [
+            {
+                "targetid": "31"
+            }
+        ],
+        "properties": [
+            {
+                "name": "propL",
+                "value": "valL"
+            }
+        ]
+    },
+    {
+        "id": "30",
+        "name": "Node 30",
+        "edges": [],
+        "config-options": [
+            {
+                "name": "optionL",
+                "value": "valL"
+            }
+        ]
+    },
+    {
+        "id": "31",
+        "name": "Node 31",
+        "edges": []
+    }
+]
