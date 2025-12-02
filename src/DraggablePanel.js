@@ -85,7 +85,6 @@ function DraggablePanel({ title, children, defaultX = 0, defaultY = 0, minWidth 
             {title && (
                 <div ref={headerRef} style={headerStyle} onMouseDown={handleMouseDown}>
                     <span style={{ flex: 1 }}>{title}</span>
-                    <span style={{ fontSize: '20px', color: '#999' }}>⋮</span>
                 </div>
             )}
             <div style={contentStyle}>
