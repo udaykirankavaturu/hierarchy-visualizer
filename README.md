@@ -1,70 +1,208 @@
-# Getting Started with Create React App
+# Hierarchy Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based interactive tool for visualizing hierarchical data structures as trees. Upload JSON files or paste JSON arrays directly to create dynamic, navigable visualizations with detailed node properties and attribute filtering.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Multiple Input Methods**: Upload JSON files or paste JSON arrays directly
+- **Interactive Tree Visualization**: Explore hierarchical data with an intuitive tree view
+- **Draggable Panels**: Reposition and resize information panels as needed
+- **Attribute Filtering**: Show/hide specific node properties dynamically
+- **Data Table View**: Click nodes to view detailed information in a separate panel
+- **Missing Edge Detection**: Identifies and highlights references to missing nodes
+- **Reset Functionality**: Clear all data and start fresh at any time
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone or download the repository
+2. Navigate to the project directory:
+   ```bash
+   cd hierarchy-visualizer
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+### Running the Application
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Start the development server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open [http://localhost:3000](http://localhost:3000) in your browser. The page will automatically reload when you make changes.
 
-### `npm run eject`
+## How to Use
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Prepare Your Data
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Your data must be a **JSON array** where each object has at minimum:
+- `id`: A unique identifier for the node
+- `name`: Display name for the node
+- `edges`: An array of edge objects (can be empty)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Example JSON structure:
+```json
+[
+  {
+    "id": "1",
+    "name": "Root Node",
+    "edges": [
+      { "targetid": "2" },
+      { "targetid": "3" }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Child Node 1",
+    "edges": []
+  },
+  {
+    "id": "3",
+    "name": "Child Node 2",
+    "edges": [
+      { "targetid": "4" }
+    ],
+    "properties": [
+      { "name": "type", "value": "category" },
+      { "name": "priority", "value": "high" }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Leaf Node",
+    "edges": []
+  }
+]
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. Load Your Data
 
-## Learn More
+#### Option A: Upload JSON Files
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Click the **Input Panel** at the top center
+2. Click the file input and select one or more `.json` files
+3. The application will process all files and combine their data
+4. The tree visualization will appear below
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Option B: Paste JSON Array
 
-### Code Splitting
+1. Click the **Input Panel** at the top center
+2. In the "Or paste JSON array" section, paste your JSON array
+3. Click the **Render** button
+4. The tree visualization will appear below
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3. Explore the Visualization
 
-### Analyzing the Bundle Size
+- **Tree View**: The main canvas displays your hierarchical data as an interactive tree
+- **Expand/Collapse Nodes**: Click on nodes to expand or collapse their children
+- **View Node Details**: Click a node to see its full properties in the data table panel (right side)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 4. Filter Attributes
 
-### Making a Progressive Web App
+The **Attribute Filter** panel (left side) allows you to control which properties are displayed on nodes:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Select All**: Show all available attributes
+- **Clear**: Hide all attributes
+- Individual checkboxes to toggle specific attributes on/off
 
-### Advanced Configuration
+### 5. Manage Panels
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+All information panels are draggable:
 
-### Deployment
+- Click and drag the panel header to move it around the screen
+- Click the **Hide** button in the panel title to hide panels
+- Click **Show Input Panel** (top center) to reveal the input panel again
+- Click **Reset** (top right) to clear all data and start over
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 6. Reset
 
-### `npm run build` fails to minify
+Click the **Reset** button (red outline, top right) to:
+- Clear all loaded data
+- Reset the visualization
+- Return the interface to its initial state
+- Show the Input Panel again
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Data Format Details
+
+### Required Fields
+
+- `id` (string): Unique identifier for the node
+- `name` (string): Display name for the node
+- `edges` (array): Array of edge objects pointing to child nodes
+
+### Optional Fields
+
+- `properties` (array): Custom properties to display. Each property should have:
+  - `name` (string): Property name
+  - `value` (string or any): Property value
+
+### Edge Objects
+
+Each edge should have:
+- `targetid` (string): The ID of the target node
+
+**Note**: If a `targetid` references a node that doesn't exist in your data, it will be marked as "Missing" in the visualization.
+
+## Keyboard Shortcuts & Mouse Events
+
+- **Drag Panels**: Click and hold the panel title bar, then drag
+- **Click Nodes**: Select a node to view details
+- **Scroll**: Use mouse wheel to zoom in/out on the tree (if supported)
+
+## Build for Production
+
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+The build folder will be created with optimized files ready for deployment.
+
+## Troubleshooting
+
+### "Input must be a JSON array" error
+- Ensure your pasted content is a valid JSON array `[...]`
+- Check for syntax errors in your JSON
+
+### "File does not contain a JSON array" error
+- Verify each uploaded file contains a valid JSON array, not an object
+
+### Tree not displaying
+- Ensure your data has proper hierarchical structure with edges
+- Check that all referenced node IDs exist in your dataset
+- Look for missing edge warnings in the console
+
+### Panels overlapping
+- Drag panels to reposition them as needed
+- Use the Hide button to temporarily hide panels
+
+## Component Overview
+
+- **App.js**: Main application component managing state and data flow
+- **Tree.js**: Tree visualization component
+- **DataTable.js**: Displays detailed node information
+- **DraggablePanel.js**: Reusable draggable panel wrapper component
+
+## Technologies Used
+
+- React
+- CSS3 (Flexbox, Grid, Animations)
+- JavaScript ES6+
+
+## Notes
+
+- The application stores data in browser memory. Refreshing the page will clear loaded data.
+- Large datasets may impact performance; consider splitting into multiple files.
+- The visualization automatically detects root nodes (nodes with no incoming edges).
+
