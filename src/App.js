@@ -310,8 +310,7 @@ function App() {
           numColumns = Object.keys(selectedArray).length;
         }
         const panelWidth = Math.max(350, 120 * numColumns);
-        const maxX = window.innerWidth - panelWidth - 24; // 24px right margin
-        const defaultX = Math.max(24, Math.min(maxX, window.innerWidth - 370));
+        const defaultX = window.innerWidth / 2 - panelWidth / 2;
         return (
           <DraggablePanel
             title={`${selectedNodeName} - ${selectedArrayName}`}
