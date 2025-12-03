@@ -128,14 +128,7 @@ export default class MyTree extends React.Component {
   };
 
   render() {
-    // Dynamic separation: base + extra per attribute
-    const baseSeparation = 2;
-    const extraPerAttr = 0.6;
-    const attrCount = this.props.maxVisibleAttributes || 0;
-    const separation = {
-      siblings: baseSeparation + attrCount * extraPerAttr,
-      nonSiblings: baseSeparation + attrCount * extraPerAttr + 0.5
-    };
+    const separation = { siblings: 2, nonSiblings: 2.5 };
     return (
       <div style={containerStyles} ref={this.containerRef}>
         <Tree

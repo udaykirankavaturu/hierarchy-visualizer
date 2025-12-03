@@ -385,15 +385,7 @@ function App() {
           </div>
         </DraggablePanel>
       )}
-      {/* Calculate max number of visible attributes for dynamic node spacing */}
-      {hierarchicalData ? (
-        <MyTree
-          data={hierarchicalData}
-          onArraySelect={handleArraySelection}
-          visibleNodeProperties={visibleNodeProperties}
-          maxVisibleAttributes={attributeKeys.filter(k => visibleNodeProperties[k]).length}
-        />
-      ) : null}
+      {hierarchicalData ? <MyTree data={hierarchicalData} onArraySelect={handleArraySelection} visibleNodeProperties={visibleNodeProperties} /> : null}
     </div>
   );
 }
