@@ -38,10 +38,14 @@ const renderRectSvgNode = ({ nodeDatum, toggleNode, onArraySelect, visibleNodePr
     key !== 'children' && key !== 'edges' && !key.startsWith('__')
   );
 
-  // Extract string properties to display
-  const stringProps = ['id', 'name', 'group', 'type', 'status'].filter(
-    prop => nodeDatum[prop] && typeof nodeDatum[prop] === 'string' && visibleNodeProperties[prop] === true
-  );
+  // Extract all string properties to display based on visibleNodeProperties
+  const stringProps = Object.keys(nodeDatum)
+    .filter(
+      prop =>
+        typeof nodeDatum[prop] === 'string' &&
+        visibleNodeProperties[prop] === true &&
+        prop !== 'children' && prop !== 'edges' && !prop.startsWith('__')
+    );
 
   const handleDropdownChange = (event) => {
     event.stopPropagation();
