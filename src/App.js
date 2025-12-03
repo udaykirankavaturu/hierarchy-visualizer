@@ -75,6 +75,8 @@ function transformData(data) {
 }
 
 function App() {
+  // State for attribute panel visibility
+  const [showAttributePanel, setShowAttributePanel] = useState(true);
   // State to control visibility of upload/paste section
   const [showInputPanel, setShowInputPanel] = useState(true);
   // State for pasted array
@@ -346,13 +348,15 @@ function App() {
           </DraggablePanel>
         );
       })()}
-      {hierarchicalData && (
+      {hierarchicalData && showAttributePanel && (
         <DraggablePanel
           title="Attribute Filter"
           defaultX={10}
           defaultY={10}
           minWidth={300}
           zIndex={1000}
+          onHeaderAction={() => setShowAttributePanel(false)}
+          headerActionLabel="Hide"
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             {attributeKeys.map(prop => (
@@ -384,6 +388,15 @@ function App() {
             </button>
           </div>
         </DraggablePanel>
+      )}
+      {/* Show button to unhide attribute panel if hidden and data is rendered */}
+      {hierarchicalData && !showAttributePanel && (
+        <button
+          onClick={() => setShowAttributePanel(true)}
+          style={{ position: 'absolute', top: 10, left: 24, zIndex: 2100, background: 'white', color: '#1976d2', border: '2px solid #1976d2', borderRadius: 6, fontWeight: 'bold', fontSize: 14, padding: '6px 18px', cursor: 'pointer', boxShadow: '0 2px 8px #0001' }}
+        >
+          Show Attribute Panel
+        </button>
       )}
       {hierarchicalData ? <MyTree data={hierarchicalData} onArraySelect={handleArraySelection} visibleNodeProperties={visibleNodeProperties} /> : null}
     </div>
