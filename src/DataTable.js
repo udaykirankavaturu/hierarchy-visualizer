@@ -49,10 +49,13 @@ const DataTable = ({ data }) => {
   const [visibleColumns, setVisibleColumns] = useState({});
   const [search, setSearch] = useState("");
 
+  // Special case: array of strings
+  const isArrayOfStrings = Array.isArray(data) && data.every(item => typeof item === 'string');
+
   // Extract string keys from data
   const stringKeys = useMemo(() => {
     if (!data) return [];
-
+    if (isArrayOfStrings) return [];
     if (Array.isArray(data)) {
       const keys = new Set();
       data.forEach(row => {
@@ -201,6 +204,27 @@ const DataTable = ({ data }) => {
     });
   });
 
+  if (isArrayOfStrings) {
+    return (
+      <div style={{ overflowX: 'auto', maxWidth: '100%' }}>
+        <table style={tableStyle}>
+          <thead>
+            <tr>
+              <th style={thStyle}>Values</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item, idx) => (
+              <tr key={idx}>
+                <td style={tdStyle}>{item}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+  // ...existing code...
   return (
     <>
       <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '10px' }}>
