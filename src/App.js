@@ -38,6 +38,29 @@ function transformData(data) {
         }
       });
     }
+    // Special case: treat 'DefaultTargetTemplateId' property as an edge only if it is an object with a string value
+    if (
+      node.properties &&
+      typeof node.properties === 'object' &&
+      node.properties.DefaultTargetTemplateId &&
+      typeof node.properties.DefaultTargetTemplateId === 'object' &&
+      typeof node.properties.DefaultTargetTemplateId.value === 'string'
+    ) {
+      const targetId = node.properties.DefaultTargetTemplateId.value;
+      alltargetids.add(targetId);
+      if (dataMap[targetId]) {
+        dataMap[node.id].children.push(dataMap[targetId]);
+      } else {
+        const missingNode = {
+          id: `missing-${targetId}`,
+          name: `Missing: ${targetId}`,
+          isMissing: true,
+          children: []
+        };
+        dataMap[node.id].children.push(missingNode);
+        missingEdges.push({ from: node.id, to: targetId });
+      }
+    }
   });
 
   const rootNodes = data
