@@ -72,7 +72,7 @@ const DataTable = ({ data }) => {
         .map(([key]) => key);
     }
     return [];
-  }, [data]);
+  }, [data, isArrayOfStrings]);
 
   // Initialize visible columns state
   useEffect(() => {
