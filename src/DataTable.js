@@ -242,7 +242,7 @@ const DataTable = ({ data }) => {
             {filteredRows.map((row, index) => (
               <tr key={index}>
                 {visibleHeaders.map(header => (
-                  <td key={header} style={tdStyle}>{String(row[header])}</td>
+                  <td key={header} style={tdStyle}>{row[header] === undefined || row[header] === null ? '' : String(row[header])}</td>
                 ))}
               </tr>
             ))}
